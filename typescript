@@ -1,0 +1,84 @@
+Script started on 2020-09-24 09:38:08-0400
+]0;thomas@himalia: ~/avida/My Documents/Vorlesungen/CEG4350/assignments/P0-2020-Fall[01;32mthomas@himalia[00m:[01;34m~/avida/My Documents/Vorlesungen/CEG4350/assignments/P0-2020-Fall [00m$ sudo snap install --classic code[C[Cdf -h[K[C[C[1Psnap[C[CDiscord &[C[C[5Psnap[C[Cdf -h[C[Csudo snap install --classic code[C[C[Kgdb P0
+GNU gdb (Ubuntu 8.1-0ubuntu3.2) 8.1.0.20180409-git
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from P0...done.
+(gdb) break main
+Breakpoint 1 at 0x57e8: file shell.cpp, line 356.
+(gdb) r
+Starting program: /home/thomas/avida/My Documents/Vorlesungen/CEG4350/assignments/P0-2020-Fall/P0 
+
+Breakpoint 1, main () at shell.cpp:356
+356	{
+(gdb) n
+359	  usage();
+(gdb) 
+The shell has only the following cmds:
+	cd	s
+	cp	ss
+	echo	ssss
+	inode	u
+	ls	
+	lslong	
+	mkdir	s
+	mkdisk	s
+	mkfs	s
+	mount	us
+	mount	
+	mv	ss
+	rddisk	su
+	rmdir	s
+	rm	s
+	pwd	
+	q	
+	quit	
+	umount	u
+	wrdisk	sus
+Start with ! to invoke a Unix shell cmd
+361	    *buf = 0;			// clear old input
+(gdb) 
+362	    printf("%s", "sh33% ");	// prompt
+(gdb) 
+363	    ourgets(buf);
+(gdb) 
+sh33% mkfs D1
+364	    printf("cmd [%s]\n", buf);	// just print out what we got as-is
+(gdb) n
+cmd [mkfs D1]
+365	    if (buf[0] == 0)
+(gdb) 
+367	    if (buf[0] == '#')
+(gdb) 
+369	    if (buf[0] == '!')		// begins with !, execute it as
+(gdb) 
+372	      setArgsGiven(buf, arg, types, nArgsMax);
+(gdb) 
+373	      int k = findCmd(buf, types);
+(gdb) 
+374	      if (k >= 0)
+(gdb) 
+375		invokeCmd(k, arg);
+(gdb) 
+make33fv() = 0x55555576f8f0, Name == D1, Disk# == 2
+361	    *buf = 0;			// clear old input
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [process 5247] will be killed.
+
+Quit anyway? (y or n) y
+]0;thomas@himalia: ~/avida/My Documents/Vorlesungen/CEG4350/assignments/P0-2020-Fall[01;32mthomas@himalia[00m:[01;34m~/avida/My Documents/Vorlesungen/CEG4350/assignments/P0-2020-Fall [00m$ exit
+
+Script done on 2020-09-24 09:38:45-0400

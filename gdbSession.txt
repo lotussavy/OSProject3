@@ -1,0 +1,370 @@
+Script started on 2022-03-09 21:47:55-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;kamal@kamal-Inspiron-3593: ~/Downloads/OSProject/P2[01;32mkamal@kamal-Inspiron-3593[00m:[01;34m~/Downloads/OSProject/P2[00m$ make
+make: 'P0' is up to date.
+]0;kamal@kamal-Inspiron-3593: ~/Downloads/OSProject/P2[01;32mkamal@kamal-Inspiron-3593[00m:[01;34m~/Downloads/OSProject/P2[00m$ gdb ./P0
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./P0[m...
+(gdb) break setArgsGiven
+Breakpoint 1 at [34m0x65df[m: file [32mshell.cpp[m, line 314.
+(gdb) run
+Starting program: /home/kamal/Downloads/OSProject/P2/P0 
+The shell has only the following cmds:
+	cd	s
+	cp	ss
+	echo	ssss
+	inode	u
+	ls	
+	lslong	
+	mkdir	s
+	mkdisk	s
+	mkfs	s
+	mount	us
+	mount	
+	mv	ss
+	rddisk	su
+	rmdir	s
+	rm	s
+	pwd	
+	q	
+	quit	
+	umount	u
+	wrdisk	sus
+Start with ! to invoke a Unix shell cmd
+sh33% mkfs D1
+cmd [mkfs D1]
+
+Breakpoint 1, [33msetArgsGiven[m ([36mbuf[m=0x7fffffffdb70 "mkfs D1", [36marg[m=0x0, [m
+    [m[36mtypes[m=0x55555555a7cd <ourgets(char*)+57> "H\211E\370H\203", <incomplete sequence \370>, [36mnMax[m=32767) at [32mshell.cpp[m:314
+314	{
+(gdb) print buf
+$1 = [34m0x7fffffffdb70[m "mkfs D1"
+(gdb) print arg
+$2 = (Arg *) [34m0x0[m
+(gdb) print types
+$3 = [34m0x55555555a7cd[m <[33mourgets(char*)[m+57> "H\211E\370H\203", <incomplete sequence \370>
+(gdb) print nMax
+$4 = 32767
+(gdb) next
+315	  for (uint i = 0; i < nMax; i++) {
+(gdb) 
+316	    arg[i].s = 0;
+(gdb) 
+317	    types[i] = 0;
+(gdb) 
+315	  for (uint i = 0; i < nMax; i++) {
+(gdb) 
+316	    arg[i].s = 0;
+(gdb) 
+317	    types[i] = 0;
+(gdb) 
+315	  for (uint i = 0; i < nMax; i++) {
+(gdb) 
+316	    arg[i].s = 0;
+(gdb) 
+317	    types[i] = 0;
+(gdb) 
+315	  for (uint i = 0; i < nMax; i++) {
+(gdb) 
+316	    arg[i].s = 0;
+(gdb) 
+317	    types[i] = 0;
+(gdb) 
+315	  for (uint i = 0; i < nMax; i++) {
+(gdb) 
+316	    arg[i].s = 0;
+(gdb) 
+317	    types[i] = 0;
+(gdb) 
+315	  for (uint i = 0; i < nMax; i++) {
+(gdb) 
+316	    arg[i].s = 0;
+(gdb) 
+317	    types[i] = 0;
+(gdb) 
+315	  for (uint i = 0; i < nMax; i++) {
+(gdb) 
+316	    arg[i].s = 0;
+(gdb) 
+317	    types[i] = 0;
+(gdb) 
+315	  for (uint i = 0; i < nMax; i++) {
+(gdb) 
+316	    arg[i].s = 0;
+(gdb) 
+317	    types[i] = 0;
+(gdb) 
+315	  for (uint i = 0; i < nMax; i++) {
+(gdb) 
+316	    arg[i].s = 0;
+(gdb) 
+317	    types[i] = 0;
+(gdb) 
+315	  for (uint i = 0; i < nMax; i++) {
+(gdb) 
+316	    arg[i].s = 0;
+(gdb) 
+317	    types[i] = 0;
+(gdb) 
+315	  for (uint i = 0; i < nMax; i++) {
+(gdb) 
+319	  types[nMax] = 0;
+(gdb) 
+321	  strtok(buf, " \t\n");		// terminates the cmd name with a \0
+(gdb) 
+323	  for (uint i = 0; i < nMax;) {
+(gdb) 
+324	      char *q = strtok(0, " \t");
+(gdb) 
+325	      if (q == 0 || *q == 0) break;
+(gdb) 
+326	      arg[i].s = q;
+(gdb) 
+327	      arg[i].u = toNum(q);
+(gdb) 
+328	      types[i] = isDigit(*q)? 'u' : 's';
+(gdb) 
+329	      nArgs = ++i;
+(gdb) 
+323	  for (uint i = 0; i < nMax;) {
+(gdb) 
+324	      char *q = strtok(0, " \t");
+(gdb) 
+325	      if (q == 0 || *q == 0) break;
+(gdb) 
+331	}
+(gdb) 
+[33mmain[m () at [32mshell.cpp[m:373
+373	      int k = findCmd(buf, types);
+(gdb) step
+[33mfindCmd[m ([36mname[m=0x7fffffffdb70 "mkfs", [m
+    [m[36margtypes[m=0x55555555f2e0 <arg> "u\333\377\377\377\177") at [32mshell.cpp[m:339
+339	{
+(gdb) next
+340	  for (uint i = 0; i < ncmds; i++) {
+(gdb) 
+341	    if (strcmp(name, cmdTable[i].cmdName) == 0
+(gdb) 
+340	  for (uint i = 0; i < ncmds; i++) {
+(gdb) 
+341	    if (strcmp(name, cmdTable[i].cmdName) == 0
+(gdb) 
+340	  for (uint i = 0; i < ncmds; i++) {
+(gdb) 
+341	    if (strcmp(name, cmdTable[i].cmdName) == 0
+(gdb) 
+340	  for (uint i = 0; i < ncmds; i++) {
+(gdb) 
+341	    if (strcmp(name, cmdTable[i].cmdName) == 0
+(gdb) 
+340	  for (uint i = 0; i < ncmds; i++) {
+(gdb) 
+341	    if (strcmp(name, cmdTable[i].cmdName) == 0
+(gdb) 
+340	  for (uint i = 0; i < ncmds; i++) {
+(gdb) 
+341	    if (strcmp(name, cmdTable[i].cmdName) == 0
+(gdb) 
+340	  for (uint i = 0; i < ncmds; i++) {
+(gdb) 
+341	    if (strcmp(name, cmdTable[i].cmdName) == 0
+(gdb) 
+340	  for (uint i = 0; i < ncmds; i++) {
+(gdb) 
+341	    if (strcmp(name, cmdTable[i].cmdName) == 0
+(gdb) 
+340	  for (uint i = 0; i < ncmds; i++) {
+(gdb) 
+341	    if (strcmp(name, cmdTable[i].cmdName) == 0
+(gdb) 
+342		&& strcmp(argtypes, cmdTable[i].argsRequired) == 0) {
+(gdb) 
+343	      return i;
+(gdb) 
+347	}
+(gdb) 
+[33mmain[m () at [32mshell.cpp[m:374
+374	      if (k >= 0)
+(gdb) 
+375		invokeCmd(k, arg);
+(gdb) step
+[33minvokeCmd[m ([36mk[m=21845, [36marg[m=0xaffffe070) at [32mshell.cpp[m:281
+281	{
+(gdb) next
+282	  uint ok = 1;
+(gdb) 
+283	  if (cmdTable[k].globalsNeeded[0] == 'v' && cwdVNIN == 0) {
+(gdb) 
+287	  else if (cmdTable[k].globalsNeeded[0] == 'm' && mtab == 0) {
+(gdb) 
+292	  char *req = cmdTable[k].argsRequired;
+(gdb) 
+293	  uint na = strlen(req);
+(gdb) 
+294	  for (uint i = 0; i < na; i++) {
+(gdb) 
+295	    if (req[i] == 's' && (arg[i].s == 0 || arg[i].s[0] == 0)) {
+(gdb) 
+299	    if ((req[i] == 'u') && (arg[i].s == 0 || !isDigit(arg[i].s[0]))) {
+(gdb) 
+294	  for (uint i = 0; i < na; i++) {
+(gdb) 
+304	  if (ok)
+(gdb) 
+305	    (*cmdTable[k].func) (arg);
+(gdb) step
+[33mdoMakeFV[m ([36ma[m=0x0) at [32mshell.cpp[m:119
+119	{
+(gdb) next
+120	  SimDisk * simDisk = mkSimDisk((byte *) a[0].s);
+(gdb) step
+[33mmkSimDisk[m ([36mname[m=0x7fffffffdb70 "mkfs") at [32mshell.cpp[m:57
+57	{
+(gdb) next
+58	  SimDisk * simDisk = new SimDisk(name, 0);
+(gdb) step
+[33mSimDisk::SimDisk[m ([36mthis[m=0x7ffff7fe0187, [36mdiskName[m=0x0, [36mdiskNumber[m=21845)[m
+   [m at [32msimdisk.cpp[m:52
+52	SimDisk::SimDisk(byte * diskName, uint diskNumber)
+(gdb) next
+55	  uint nargs = 0;
+(gdb) list
+50	 * fails */
+51	
+52	SimDisk::SimDisk(byte * diskName, uint diskNumber)
+53	{
+54	  char line[1024];
+55	  uint nargs = 0;
+56	  simDiskNum = 0;
+57	
+58	  if (diskName != 0) diskNumber = 255 + 1; // assuming a max of 255 disks
+59	
+(gdb) list
+60	  FILE *f = fopen("diskParams.dat", "r");
+61	  if (f != 0) {
+62	    for (uint dn = 1; dn <= diskNumber; dn ++) {
+63	      if (fgets(line, 1024, f) == 0) {
+64	        break;                  // end of file
+65	      }
+66	      if (line[0] == '#') {
+67	        continue;               // comment line;
+68	      }
+69	      nargs = sscanf(line, "%s %u %u %u %u %u\n",
+(gdb) 
+70	                     name, &nSectorsPerDisk, &nBytesPerSector,
+71	                     &diskParams.maxfnm, &diskParams.nInodes,
+72	                     &diskParams.iHeight);
+73	      if (nargs < 6) {
+74	        break;                  // end of file
+75	      }
+76	      if (diskName != 0 && strcmp((char *)this->name, (char *)diskName) == 0
+77		  || dn == diskNumber) {
+78		simDiskNum = dn;
+79		break;			// found it
+(gdb) 
+80	      }
+81	    }
+82	    fclose(f);
+83	  }
+84	  if (simDiskNum == 0 ||
+85	      !(0 < nSectorsPerDisk && nSectorsPerDisk <= SectorsMAX &&
+86		0 < nBytesPerSector && nBytesPerSector <= BytesPerSectorMAX)) {
+87	    nSectorsPerDisk = 0;	// robust
+88	    return;
+89	  }
+(gdb) info source
+Current source file is simdisk.cpp
+Compilation directory is /home/kamal/Downloads/OSProject/P2
+Located in /home/kamal/Downloads/OSProject/P2/simdisk.cpp
+Contains 137 lines.
+Source language is c++.
+Producer is GNU C++98 9.3.0 -mtune=generic -march=x86-64 -g -ansi -fasynchronous-unwind-tables -fstack-protector-strong -fstack-clash-protection -fcf-protection.
+Compiled with DWARF 2 debugging format.
+Does not include preprocessor macro info.
+(gdb) break simdisk.cpp:[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Klist
+90	
+91	  int fd = openDiskImage(O_RDONLY), exists = (fd >= 3); // already exists?
+92	  if (exists) {
+93	    struct stat statBuf;
+94	    fstat(fd, &statBuf);
+95	   close(fd);		    // file exists, but is it a valid simDisk?
+96	     exists = (uint) statBuf.st_size == nSectorsPerDisk * nBytesPerSector;
+97	  }
+98	  if (! exists) {
+99	    fd = makeDiskImage();
+(gdb) break simdisk.cpp:95
+Breakpoint 2 at [34m0x555555556863[m: file [32msimdisk.cpp[m, line 95.
+(gdb) continue
+Continuing.
+
+Breakpoint 2, [33mSimDisk::SimDisk[m ([36mthis[m=0x5555555726d0, [m
+    [m[36mdiskName[m=0x7fffffffdb75 "D1", [36mdiskNumber[m=256) at [32msimdisk.cpp[m:95
+95	   close(fd);		    // file exists, but is it a valid simDisk?
+(gdb) print diskName
+$5 = (byte *) [34m0x7fffffffdb75[m "D1"
+(gdb) continue
+Continuing.
+make33fv() = 0x5555555728e0, Name == D1, Disk# == 2
+sh33% wrdisk D1 123 HelloWorld
+cmd [wrdisk D1 123 HelloWorld]
+
+Breakpoint 1, [33msetArgsGiven[m ([36mbuf[m=0x7fffffffdb70 "wrdisk D1 123 HelloWorld", [m
+    [m[36marg[m=0x55555555f2d0 <types>, [m
+    [m[36mtypes[m=0x55555555a7cd <ourgets(char*)+57> "H\211E\370H\203", <incomplete sequence \370>, [36mnMax[m=32767) at [32mshell.cpp[m:314
+314	{
+(gdb) continue
+Continuing.
+
+Breakpoint 2, [33mSimDisk::SimDisk[m ([36mthis[m=0x555555573630, [m
+    [m[36mdiskName[m=0x7fffffffdb77 "D1", [36mdiskNumber[m=256) at [32msimdisk.cpp[m:95
+95	   close(fd);		    // file exists, but is it a valid simDisk?
+(gdb) continue
+Continuing.
+write433disk(123, HelloWorld...) == 512 to Disk D1
+sh33% rddisk D1 123
+cmd [rddisk D1 123]
+
+Breakpoint 1, [33msetArgsGiven[m ([36mbuf[m=0x7fffffffdb70 "rddisk D1 123", [m
+    [m[36marg[m=0x55555555f2d0 <types>, [m
+    [m[36mtypes[m=0x55555555a7cd <ourgets(char*)+57> "H\211E\370H\203", <incomplete sequence \370>, [36mnMax[m=32767) at [32mshell.cpp[m:314
+314	{
+(gdb) contn[Kinue
+Continuing.
+
+Breakpoint 2, [33mSimDisk::SimDisk[m ([36mthis[m=0x555555573630, [m
+    [m[36mdiskName[m=0x7fffffffdb77 "D1", [36mdiskNumber[m=256) at [32msimdisk.cpp[m:95
+95	   close(fd);		    // file exists, but is it a valid simDisk?
+(gdb) continue
+Continuing.
+read433disk(123, HelloWorld...) = 512 from Disk D1
+sh33% q
+cmd [q]
+
+Breakpoint 1, [33msetArgsGiven[m ([36mbuf[m=0x7fffffffdb70 "q", [m
+    [m[36marg[m=0x55555555f2d0 <types>, [m
+    [m[36mtypes[m=0x55555555a7cd <ourgets(char*)+57> "H\211E\370H\203", <incomplete sequence \370>, [36mnMax[m=32767) at [32mshell.cpp[m:314
+314	{
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [process 65379] will be killed.
+
+Quit anyway? (y or n) y
+]0;kamal@kamal-Inspiron-3593: ~/Downloads/OSProject/P2[01;32mkamal@kamal-Inspiron-3593[00m:[01;34m~/Downloads/OSProject/P2[00m$ exit script
+exit
+bash: exit: script: numeric argument required
+
+Script done on 2022-03-09 21:57:19-05:00 [COMMAND_EXIT_CODE="2"]

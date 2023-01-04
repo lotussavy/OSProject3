@@ -1,0 +1,8 @@
+In this second part of the project, I have added the following features to the shell
+-mkdir command
+-mv command
+-cd command
+-rmdir command
+-pwd command
+-ls command
+-inode command

@@ -1,0 +1,92 @@
+Answer of Question Number(1):
+fopen()
+It opens a file pointed to by pathname in the first argument, in the mode specified in the second arguments and upon
+success returns file pointer otherwise NULL
+
+fclose()
+It closes the streams specified by the file object which is passed as argument and returns zero upon successful
+completion otherwise EOF is returned.
+
+fread()
+It accepts four arguments and reads the data from the given stream into the array pointed by the pointer, it returns 
+the total number of elements read.
+
+fwrite()
+Writes the data specified by the pointer on to the file and returns the number of elements that are succesfully written.
+
+fstat()
+It gives the information about the file whose descriptor is passed as first argument and write it into the buffer 
+pointed  by second argument.
+
+fscanf()
+It reads the formatted input specified in second argument from the stream specified in first argument.
+
+fprintf()
+It is used to print the formatted output into the stream which is passed as an argument.
+
+sprintf()
+It sends the formatted output to the string pointer which is passed as an argument.
+
+
+
+
+
+Answer of Question Number(2):
+List of five standard library routines is given below:
+    -fseek()
+    -ftell()
+    -isalpha()
+    -puts()
+    -ferror()
+Five system calls used by code of P2 are listed below:
+    -write(){Used in simddisk.cpp}
+    -read(){Used in simddisk.cpp}
+    -close(){Used in simddisk.cpp}
+    -exit(){Used in shell.cpp}
+    -open(){Used in simddisk.cpp}
+
+
+
+
+Answer of Question Number(3):
+The reason for verifying statBuf.st_size == nSectorsPerDisk * nBytesPerSector is to check if the existing simddisk
+is valid or not.
+
+
+
+
+Answer of Question Number(4):
+    -openDiskImage()
+        This function name clearly describe its purpose that it will open the disk image so its an good identifier.
+
+    -makeDiskImage()
+        The name of the function says what will it do ie it will make the disk image. So its an appropriate identifier.
+
+    -char *cmdName;
+        Here the variable name is cmdName and it is going to hold the command to be executed so its an appropriate
+        identifier to use.
+
+    -char *argsRequired;
+        This variable will be going hold the arguments that are essential and the name is also specifying the same thing
+        so its an appropriate  identifier name to use.
+
+    -char *globalsNeeded;
+        This variable holds the list of the things that are reqired like simdis and name is also stating the same scenario
+        so its an appropriate identifier to use.
+
+
+
+
+Answer of Question Number(5):
+
+uint FileVolume::read33file(byte *fs33leaf, byte *unixFilePath)
+    -pre:: fs33leaf: file from which the bytes are to be read, 
+            unixFilePath: file to which bytes are to be written after reading,
+    -post:: if the file to be read exist it successfully read the bytes to the given file and return the number
+            bytes that are read and written successfully
+
+
+uint FileVolume::write33file(byte *unixFilePath, byte *fs33leaf)
+    -pre:: unixFilePath: file location which contains the bytes to be written, 
+           fs33leaf: file where the bytes has to be written,
+    -post:: File with appropriate written bytes is created and number of bytes written on the file is returned 

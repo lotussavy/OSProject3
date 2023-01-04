@@ -1,0 +1,41 @@
+# TestScript.txt
+mkfs D2
+mkdir directory1
+cp @/home/kamal/copy.txt a.txt
+# Test for hardlink
+ln directory1 hlink
+ln a.txt link.txt
+ls
+ln a.txt slink.txt
+ls
+cp a.txt b.txt
+ls
+mv b.txt c.txt
+ls
+mv c.txt b.txt
+ls
+rm b.txt
+ls
+rm link.txt
+ls
+inode 3
+inode slink.txt
+rm slink.txt
+ls
+# Test for SoftLink
+ln -s directory1 slinkdir
+ln -s a.txt slinka
+ls
+cd slinkdir
+cd ..
+rmdir directory1
+ls
+cd slinkdir
+#Test for bounus 
+mkdir hello
+cp @/home/kamal/copy.txt a.txt
+mv a.txt hello
+ln /hello/a.txt
+ls
+ls hello
+quit

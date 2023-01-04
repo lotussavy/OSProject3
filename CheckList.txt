@@ -1,0 +1,11 @@
+Medium file
+Large file
+Edit display of ls at last
+
+
+How can we distinguish normal node from hardlink node? No way to do so
+Do we need to print link count while deleting softlink as well? Yes you need to
+
+
+
+Inode.cpp line 37=> do we need to subtract 1 again to account for the path
